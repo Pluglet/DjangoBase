@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
-{% load static %}
-{% load socialaccount %}
 
 {% block content %}
-    <h1>Thi is the about page</h1>
 
-{%  endblock content %}
+    <div class="auth-container">
+    {% include  'nav.html' %}
+    <main>
+
+    <h1>About page</h1>
+</main>
+    {% include 'footer.html' %}
+
+    </div>
+{% endblock %}

@@ -14,10 +14,11 @@
         <div class="nav-links">
                 <a class="link" href="{% url 'landing' %}">Home</a>
                 <a class="link" href="{% url 'about' %}">About Us</a>
+                <a class="link" href="{% url 'contact' %}">Contact</a>
                 <a class="link" href="{% url 'account_login' %}">Login</a>
         </div>
     </nav>
-    <main>
+    <main id="landing-main">
 
     <div class="hero">
         <div class="hero-text">
@@ -33,9 +34,7 @@
 
 </main>
 
-<footer>
-    <p>All rights reserved: Three Rings Advisory</p>
-</footer>
+{% include 'footer.html' %}
 
 
 </div>

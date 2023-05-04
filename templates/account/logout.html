@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="auth-container">
+    {% include  'nav.html' %}
+    <main>
+
+    <div class="auth-card">
+    <div class="auth-header">
+        <h2>Are you sure you want to Logout?</h2>
+    </div>
+    <div class="auth-body">
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <form method = "POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = "submit">Yes - log me out!</button>
+    </form>
+    </div>
+    </div>
+</main>
+    {% include 'footer.html' %}
+
+    </div>
+{% endblock %}
