@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+
+{% block content %}
+
+<div class="landing-container">
+    <nav>
+        <div class="left-nav-items">
+            <div class="logo">&%@</div>
+            <div class="brand">BRAND</div>
+        </div>
+        <div class="nav-links">
+                <a class="link" href="{% url 'landing' %}">Home</a>
+                <a class="link" href="{% url 'about' %}">About Us</a>
+                <a class="link" href="{% url 'account_login' %}">Login</a>
+        </div>
+    </nav>
+    <main>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Call to Action</h1>
+            <p>Explanatory 'call to action' text.</p>
+        </div>
+        <div class ="CTA-link">
+            <a class ="CTA-text" href="{% url 'account_signup' %}">
+                Register Now
+            </a>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>All rights reserved: Three Rings Advisory</p>
+</footer>
+
+
+</div>
+
+
+
+{%  endblock content %}

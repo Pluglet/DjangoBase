@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+
+{%  block content %}
+<div class="navbar-container">
+    <div class="logo">LOGO</div>
+    <div class="nav-links-container">
+        <ul class="links">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            {% if user.is_authenticated %}
+                <p>Welcome {{ user.username }}!</p>
+                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% else %}
+                <p>You are not logged in</p>
+                <a href="{% provider_login_url 'github' %}">Sign Up or Sign in</a>
+                    {% endif %}
+        </ul>
+    </div>
+</div>
+
+
+
+{%  endblock content %}
