@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="auth-container">
+    {% include  'nav.html' %}
+<main>
+
+    <div class="auth-card">
+    <div class="auth-header">
+        <h1>Login</h1>
+    </div>
+    <div class="auth-body">
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <<div>
+      <strong>Menu:</strong>
+      <ul>
+
+        <li><a href="/accounts/login/">Sign In</a></li>
+        <li><a href="/accounts/signup/">Sign Up</a></li>
+
+      </ul>
+    </div>
+    <form method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="ZkfWXLXbm24GVl9c2O9MceaNtkHGZsGpPK5eGAzY7Yl1fLL1LOdA2BhvXTlOb63Y">
+      <button type="submit">Continue</button>
+    </form>
+    </div>
+    </div>
+
+</main>
+    {% include 'footer.html' %}
+
+</div>
+{% endblock %}

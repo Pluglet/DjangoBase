@@ -1,6 +1,48 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
+{% load static %}
 
 {% block content %}
+
+    <div class="auth-container">
+        {% include 'nav.html' %}
+    <main>
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Register</h1>
+            </div>
+            <div class="auth-body">
+                {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                {% endif %}
+            <form method = "POST">
+                {% csrf_token %}
+            {{ form.as_p }}
+            <button type = "submit">Register</button>
+            </form>
+            <div class="social_logins">
+                <p>Or register with</p>
+{#                <a href="{% provider_login_url 'google-oauth2' %}"><img src="{% static 'images/icons/google_icon.png' %}" alt="Google"></a>#}
+{#                <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'images/icons/facebook.png' %}" alt="Facebook"></a>#}
+{#                <a href="{% url 'social:begin' 'twitter' %}"><img src="{% static 'images/icons/twitter.png' %}" alt="Twitter"></a>#}
+                <a href="{% provider_login_url 'github' %}"><img class="social_icon"  src="{% static 'images/icons/github_icon.svg' %}" alt="Github"></a>
+            </div>
+                <p>Already have an account? Then please <a href="{{ login_url }}">log in</a></p>
+            </div>
+        </div>
+    </main>
+    </div>
+
+
+
     {% include  'nav.html' %}
 
+    <h1>Register</h1>
+
+<p>Already have an account? Then please <a href="{{ login_url }}">sign in</a></p>
+
+
+
 {% endblock %}
+
+
